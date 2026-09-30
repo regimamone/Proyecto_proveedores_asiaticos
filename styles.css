@@ -1,0 +1,610 @@
+/* Reset y variables de estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.supplier-header {
+  display: flex !important;
+  align-items: center !important; /* Alinea verticalmente al centro todo el contenido */
+  justify-content: space-between;
+  gap: 12px !important;           /* DISTANCIA FOTO-TEXTO: Reduce a 8px o 6px si lo querés más cerca */
+  width: 100%;
+}
+
+/* 2. Tamaño MEDIANO y controlado para el contenedor de la imagen */
+.supplier-media {
+  flex-shrink: 0 !important;
+  width: 160px !important;        /* Ancho mediano (ajustá entre 140px y 180px a tu gusto) */
+  height: 100px !important;       /* Altura proporcional */
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+/* 3. Ajuste de la foto interna */
+.supplier-media img,
+.supplier-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;   /* Evita que la foto se estire */
+  display: block !important;
+  margin: 0 !important;
+}
+
+/* 4. Asegura que el bloque de texto tome el espacio restante y pegue arriba/centro */
+.supplier-identity {
+  flex-grow: 1;
+  margin: 0 !important;
+}
+
+.supplier-identity h3 {
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+:root {
+    --bg-dark: #0a0d12;
+    --bg-card: #121824;
+    --border-tech: #1f2a3e;
+    --primary-red: #e50914;
+    --primary-red-hover: #b80710;
+    --accent-red-glow: rgba(229, 9, 20, 0.25);
+    --text-white: #ffffff;
+    --text-gray: #a0aec0;
+    --text-muted: #64748b;
+    --gold-accent: #f59e0b;
+    --green-verified: #10b981;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header / Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4%;
+    background-color: rgba(10, 13, 18, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-tech);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Bandera China Futurista */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.china-flag-tech {
+    background-color: var(--primary-red);
+    width: 38px;
+    height: 26px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 10px var(--accent-red-glow);
+    display: flex;
+    flex-direction: column;
+    padding: 2px 4px;
+}
+
+.star-main {
+    color: #ffd700;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.star-sub {
+    color: #ffd700;
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: var(--primary-red);
+}
+
+/* Navegación y Dropdowns */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-tech);
+    border-radius: 6px;
+    list-style: none;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Botones con estilo Cyberpunk/Tech */
+.btn-tech {
+    background: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--text-white);
+    padding: 8px 20px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-red-glow);
+}
+
+.btn-tech:hover {
+    background-color: var(--primary-red);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 5rem 20px;
+    background: radial-gradient(circle at center, #1b0507 0%, #0a0d12 70%);
+    text-align: center;
+    border-bottom: 1px solid var(--border-tech);
+}
+
+.badge-tech {
+    display: inline-block;
+    background: rgba(229, 9, 20, 0.15);
+    border: 1px solid var(--primary-red);
+    color: #ff6b6b;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    max-width: 900px;
+    margin: 0 auto 1rem auto;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* Buscador IA */
+.search-box-futuristic {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-tech);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.search-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.search-input-group input {
+    flex: 1;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-tech);
+    padding: 12px 18px;
+    color: var(--text-white);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-ai-search {
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    padding: 0 25px;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-ai-search:hover {
+    background: var(--primary-red-hover);
+}
+
+.upload-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Filtros */
+.filters-section {
+    background: #0d121a;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-tech);
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-item select {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    border: 1px solid var(--border-tech);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+
+.checkbox-item label {
+    color: var(--green-verified);
+    cursor: pointer;
+}
+
+/* Fichas de Proveedores */
+.suppliers-section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.supplier-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-tech);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.supplier-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-tech);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.supplier-identity h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.chinese-name {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.badges-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge.verified {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-verified);
+    border: 1px solid var(--green-verified);
+}
+
+.badge.type {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-gray);
+}
+
+.badge.country {
+    background: rgba(229, 9, 20, 0.12);
+    color: #ff8080;
+}
+
+.supplier-rating {
+    text-align: right;
+}
+
+.score {
+    color: var(--gold-accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.tx-count {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Cuerpo de la ficha */
+.supplier-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.info-block h4, .commercial-block h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.info-block ul {
+    list-style: none;
+}
+
+.info-block li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--text-gray);
+}
+
+.info-block li strong {
+    color: var(--text-white);
+}
+
+.certifications {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cert-link {
+    background: #1a2333;
+    color: var(--text-white);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: 1px solid var(--border-tech);
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.grid-item {
+    background: var(--bg-dark);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-tech);
+}
+
+.grid-item .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.grid-item .value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.supplier-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-tech);
+    padding-top: 15px;
+}
+
+.guarantee-tag {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.btn-chat {
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-chat:hover {
+    background: var(--primary-red-hover);
+}
+
+/* Footer Futurista */
+.futuristic-footer {
+    background: #06080c;
+    border-top: 1px solid var(--border-tech);
+    padding: 4rem 0 1rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-white);
+}
+
+.footer-col p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+.footer-col ul a:hover {
+    color: var(--primary-red);
+}
+
+.btn-store-link {
+    display: inline-block;
+    background: rgba(229, 9, 20, 0.1);
+    border: 1px solid var(--primary-red);
+    color: var(--text-white);
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-store-link:hover {
+    background: var(--primary-red);
+    box-shadow: 0 0 15px var(--accent-red-glow);
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-contact-footer {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-tech);
+    color: var(--text-white);
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.btn-contact-footer:hover {
+    border-color: var(--primary-red);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .supplier-body {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .supplier-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .supplier-rating {
+        text-align: left;
+    }
+}
